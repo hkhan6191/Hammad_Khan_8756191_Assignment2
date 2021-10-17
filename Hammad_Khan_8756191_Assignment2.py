@@ -138,6 +138,79 @@ totalcost = (cost*numinput)
 totalcost2 = (cost2*numinput2)
 finalcost = (totalcost + totalcost2)
 
-print("Your total cost today will be: $%.2f" % (finalcost * hst))
+disc15 = 0.15
+quanDisc = finalcost*disc15
+
+disc10 = 0.10
+ageDisc = finalcost*disc10
+
+discPrice = (finalcost - quanDisc) - ageDisc
+discPrice2 = (finalcost - quanDisc)
+discPrice3 = (finalcost - ageDisc)
+
+if numinput >= 3 or numinput2 >= 3:
+    print("You are eligible for a quantity discount of 15%' off!")
+    print("$%.2f off!" % (quanDisc))
+
+    print("")
+
+    print("You can be eligible for a discount if you are a senior citizen or student!")
+    age = int(input("Please enter in your age: "))
+
+    if age >= 65:
+        print("")
+        print("Your are eligible for our senior discount of 10%' off!")
+        print("$%.2f off!" % (ageDisc))
+        print("Subtotal: $%.2f" % (finalcost))
+        print("Discounted Price: $%.2f" % (discPrice))
+        print("Total: $%.2f" % (discPrice * hst))
+
+    elif 24 >= age >= 18:
+        print("")
+        print("You are eligible for our student discount of 10%' off!")
+        print("$%.2f off!" % (ageDisc))
+        print("Subtotal: $%.2f" % (finalcost))
+        print("Discounted Price: $%.2f" % (discPrice))
+        print("Total: $%.2f" % (discPrice * hst))
+
+    else:
+        print("")
+        print("Sorry, there is no discount for your age range")
+        print("Subtotal: $%.2f" % (finalcost))
+        print("Discounted Price: $%.2f" % (discPrice2))
+        print("Total: $%.2f" % (discPrice2 * hst))
+
+elif numinput < 3 and numinput2 < 3:
+    print("You can be eligible for a discount if you are a senior citizen or student!")
+    age = int(input("Please enter in your age: "))
+
+    if age >= 65:
+        print("")
+        print("Your are eligible for our senior discount of 10%' off!")
+        print("$%.2f off!" % (ageDisc))
+        print("Subtotal: $%.2f" % (finalcost))
+        print("Discounted Price: $%.2f" % (discPrice3))
+        print("Total: $%.2f" % (discPrice3 * hst))
+
+    elif 24 >= age >= 18:
+        print("")
+        print("You are eligible for our student discount of 10%' off!")
+        print("$%.2f off!" % (ageDisc))
+        print("Subtotal: $%.2f" % (finalcost))
+        print("Discounted Price: $%.2f" % (discPrice3))
+        print("Total: $%.2f" % (discPrice3 * hst))
+
+    else:
+        print("")
+        print("Sorry, there is no discount for your age range")
+        print("Subtotal: $%.2f" % (finalcost))
+        print("Total: $%.2f" % (finalcost * hst))
+
+else:
+    print("")
+    print("Subtotal: $%.2f" % (finalcost))
+    print("Total: $%.2f" % (finalcost * hst))
+
+print("")
 
 print("Thank you for choosing Abby's Merchandizing today! We hope you enjoyed your shopping experience with us! ")
