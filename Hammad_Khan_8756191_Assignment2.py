@@ -108,11 +108,58 @@ print("Alright, lets recap your order.")
 
 print("")
 
-print("Color of shirt: " + str(colorinput))
-print("Type of shirt: " + str(typeinput))
+if colorinput == 3:
+    print("Color of shirt: Blue")
+
+elif colorinput == 4:
+    print("Color of shirt: Red")
+
+elif colorinput == 5:
+    print("Color of shirt: Green")
+
+elif colorinput == 6:
+    print("Color of shirt: Yellow")
+
+elif colorinput == 7:
+    print("Color of shirt: Orange")
+
+elif colorinput == 8:
+    print("Color of shirt: White")
+
+elif colorinput == 9:
+    print("Color of shirt: Black")
+
+#print("Color of shirt: " + str(colorinput))
+
+if typeinput == 1:
+    print("Type of shirt: Polo")
+
+elif typeinput == 2:
+    print("Type of shirt: T-shirt")
+
+#print("Type of shirt: " + str(typeinput))
+
 print("Number of shirt(s): " + str(numinput))
-print("Color of hoodie: " + str(colorinput2))
-print("Type of hoodie: " + str(typeinput2))
+
+if colorinput2 == 8:
+    print("Color of hoodie: White")
+
+elif colorinput2 == 9:
+    print("Color of hoodie: Black")
+
+elif colorinput2 == 10:
+    print("Color of hoodie: Brown")
+
+#print("Color of hoodie: " + str(colorinput2))
+
+if typeinput2 == 11:
+    print("Type of hoodie: Zip-Up")
+    
+elif typeinput2 == 12:
+    print("Type of hoodie: Pullover")
+
+#print("Type of hoodie: " + str(typeinput2))
+
 print("Number of hoodie(s): " + str(numinput2))
 
 print("")
@@ -195,4 +242,4 @@ else:
 
 print("")
 
-print("Thank you for choosing Abby's Merchandizing today! We hope you enjoyed your shopping experience with us!  ")
+print("Thank you for choosing Abby's Merchandizing today! We hope you enjoyed your shopping experience with us! ")
