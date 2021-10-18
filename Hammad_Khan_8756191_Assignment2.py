@@ -1,20 +1,5 @@
 print("Welcome, to Abby's Merchandizing! This tool can be used to place an order with us as well as to calculate the total cost of your order. Let's get started!")
 
-polo = 1
-tshirt = 2
-
-zipup = 11
-pullover = 12
-
-blue = 3
-red = 4
-green = 5
-yellow = 6
-orange = 7
-white = 8
-black = 9
-brown = 10
-
 cost = 9.99
 cost2 = 14.99
 hst = 1.13
@@ -29,49 +14,42 @@ print("Yellow = 6")
 print("Orange = 7")
 print("White = 8")
 print("Black = 9")
-colorinput = int(input("What color shirt would you like?: ")) 
 
-if colorinput == blue:
-    print("Blue, great choice! ")
+def colorIn():
 
-elif colorinput == red:
-    print("Red, great choice! ")
+    global colorinput
+    colorinput = int(input("What color shirt would you like?: ")) 
 
-elif colorinput == green:
-    print("Green, great choice! ")
+    while 2 < colorinput < 10:
+        print("Great choice! ")
+        break
 
-elif colorinput == yellow:
-    print("Yellow, great choice! ")
+    else:
+        print("Oops! The color you want is not in stock  :(  Please select between 3-9")
+        colorIn()
 
-elif colorinput == orange:
-    print("Orange, great choice! ")
-
-elif colorinput == white:
-    print("White, great choice! ")
-
-elif colorinput == black:
-    print("Black, great choice! ")
-
-else:
-    print("Oops! The color you want is not in stock  :( ")
-    colorinput = int(input("Please select a different shirt color: "))
+colorIn()
 
 print("")
 
 print("Next, select the type of shirt would you would like. We offer two types of shirts. Please enter in the number that corresponds with the one you want!")
 print("Polo = 1")
 print("T-Shirt = 2")
-typeinput = int(input("Please select the type of shirt would you like!: "))
 
-if typeinput == polo:
-    print("Polo. Great choice!")
+def typeIn():
 
-elif typeinput == tshirt:
-    print("T-Shirt. Great choice!")
+    global typeinput
+    typeinput = int(input("Please select the type of shirt would you like!: "))
 
-else:
-    print("Looks like we are all out of that type of shirt... ")
-    typeinput = int(input("Please select either a Polo or a T-Shirt: "))
+    while 0 < typeinput < 3:
+        print("Great choice!")
+        break
+
+    else:
+        print("Looks like we are all out of that type of shirt...  Please select between 1-2")
+        typeIn()
+
+typeIn()
 
 print("")
 
@@ -83,37 +61,42 @@ print("We are excited to announce that we are now selling hoodies starting at $1
 print("White = 8")
 print("Black = 9")
 print("Brown = 10")
-colorinput2 = int(input("What color hoodie would you like?: "))
 
-if colorinput2 == white:
-    print("White, great choice! ")
+def colorIn2():
 
-elif colorinput2 == black:
-    print("Black, great choice! ")
+    global colorinput2
+    colorinput2 = int(input("What color hoodie would you like?: "))
 
-elif colorinput2 == brown:
-    print("Brown, great choice! ")
+    while 7 < colorinput2 < 11:
+        print("Great choice! ")
+        break
 
-else:
-    print("Oops! The color you want is not in stock  :( ")
-    colorinput2 = int(input("Please select a different hoodie color: "))
+    else:
+        print("Oops! The color you want is not in stock  :(  Please select between 8-10")
+        colorIn2()
+
+colorIn2()
 
 print("")
 
 print("Next, select the type of hoodie would you would like. We offer two types of hoodies. Please enter in the number that corresponds with the one you want!")
 print("Zip-Up = 11")
 print("Pullover = 12")
-typeinput2 = int(input("Please select the type of hoodie would you like!: "))
 
-if typeinput2 == zipup:
-    print("Zip-Up. Great choice!")
+def typeIn2():
 
-elif typeinput2 == pullover:
-    print("Pullover. Great choice!")
+    global typeinput2
+    typeinput2 = int(input("Please select the type of hoodie would you like!: "))
 
-else:
-    print("Looks like we are all out of that type of hoodie... ")
-    typeinput2 = int(input("Please select either a Zip-Up or a Pullover: "))
+    while 10 < typeinput2 < 13:
+        print("Great choice!")
+        break
+
+    else:
+        print("Looks like we are all out of that type of hoodie...  Please select between 11-12")
+        typeIn2()
+
+typeIn2()
 
 print("")
 
@@ -148,16 +131,16 @@ discPrice = (finalcost - quanDisc) - ageDisc
 discPrice2 = (finalcost - quanDisc)
 discPrice3 = (finalcost - ageDisc)
 
-if numinput >= 3 or numinput2 >= 3:
+def quanElig():
     print("You are eligible for a quantity discount of 15%' off!")
     print("$%.2f off!" % (quanDisc))
 
-    print("")
-
+def ageElig():
     print("You can be eligible for a discount if you are a senior citizen or student!")
+    global age
     age = int(input("Please enter in your age: "))
 
-    if age >= 65:
+def ageCalc():
         print("")
         print("Your are eligible for our senior discount of 10%' off!")
         print("$%.2f off!" % (ageDisc))
@@ -165,52 +148,51 @@ if numinput >= 3 or numinput2 >= 3:
         print("Discounted Price: $%.2f" % (discPrice))
         print("Total: $%.2f" % (discPrice * hst))
 
-    elif 24 >= age >= 18:
+def noDisc():
         print("")
-        print("You are eligible for our student discount of 10%' off!")
-        print("$%.2f off!" % (ageDisc))
+        print("Sorry, there is no discount for your age range")
         print("Subtotal: $%.2f" % (finalcost))
-        print("Discounted Price: $%.2f" % (discPrice))
-        print("Total: $%.2f" % (discPrice * hst))
+        print("Total: $%.2f" % (finalcost * hst))
 
-    else:
+def quanCalc():
         print("")
         print("Sorry, there is no discount for your age range")
         print("Subtotal: $%.2f" % (finalcost))
         print("Discounted Price: $%.2f" % (discPrice2))
         print("Total: $%.2f" % (discPrice2 * hst))
 
-elif numinput < 3 and numinput2 < 3:
-    print("You can be eligible for a discount if you are a senior citizen or student!")
-    age = int(input("Please enter in your age: "))
+
+if numinput >= 3 or numinput2 >= 3:
+    quanElig()
+
+    print("")
+
+    ageElig()
 
     if age >= 65:
-        print("")
-        print("Your are eligible for our senior discount of 10%' off!")
-        print("$%.2f off!" % (ageDisc))
-        print("Subtotal: $%.2f" % (finalcost))
-        print("Discounted Price: $%.2f" % (discPrice3))
-        print("Total: $%.2f" % (discPrice3 * hst))
+        ageCalc()
 
     elif 24 >= age >= 18:
-        print("")
-        print("You are eligible for our student discount of 10%' off!")
-        print("$%.2f off!" % (ageDisc))
-        print("Subtotal: $%.2f" % (finalcost))
-        print("Discounted Price: $%.2f" % (discPrice3))
-        print("Total: $%.2f" % (discPrice3 * hst))
+        ageCalc()
 
     else:
-        print("")
-        print("Sorry, there is no discount for your age range")
-        print("Subtotal: $%.2f" % (finalcost))
-        print("Total: $%.2f" % (finalcost * hst))
+        quanCalc()
+
+elif numinput < 3 and numinput2 < 3:
+    ageElig()
+
+    if age >= 65:
+        ageCalc()
+
+    elif 24 >= age >= 18:
+        ageCalc()
+
+    else:
+        noDisc()
 
 else:
-    print("")
-    print("Subtotal: $%.2f" % (finalcost))
-    print("Total: $%.2f" % (finalcost * hst))
+    noDisc()
 
 print("")
 
-print("Thank you for choosing Abby's Merchandizing today! We hope you enjoyed your shopping experience with us! ")
+print("Thank you for choosing Abby's Merchandizing today! We hope you enjoyed your shopping experience with us!  ")
